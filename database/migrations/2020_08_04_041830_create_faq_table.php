@@ -18,6 +18,8 @@ class CreateFaqTable extends Migration
             $table->string('pregunta');
             $table->string('respuesta');
             $table->timestamps();
+
+            
         });
     }
 
