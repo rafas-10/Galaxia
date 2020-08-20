@@ -24,7 +24,7 @@
             </li>
             @endif
 
-            @if(kvfj(Auth::user()->permissions, 'galeria'))
+            @if(kvfj(Auth::user()->permissions, 'galeria_view'))
             <li>
                 <a href="{{ url('/admin/galeria') }}"> <i class="fas fa-images"></i> Galería</a>
             </li>

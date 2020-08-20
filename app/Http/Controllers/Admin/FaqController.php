@@ -17,7 +17,7 @@ class FaqController extends Controller
     }
 
     public function getHome(){
-        $faq = Faq::orderBy('id')->paginate(10);
+        $faq = Faq::orderBy('id')->paginate(15);
         $data =['faq' => $faq];
         return view('admin.faq.home', $data);
     }

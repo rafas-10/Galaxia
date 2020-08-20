@@ -53,6 +53,7 @@
                             <td>{{ getRoleUserArray(null, $user->role) }}</td>
                             
                             <div class="opts">
+
                                 @if(kvfj(Auth::user()->permissions, 'edit'))
                             <td>
                                 <a href="{{ url('/admin/user/'.$user->id.'/edit') }}" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-user-edit"></i>Editar</a>
@@ -63,12 +64,19 @@
                             <td>
                                 <a href="{{ url('/admin/user/'.$user->id.'/permissions') }}" data-toggle="tooltip" data-placement="top" title="Permisos"><i class="fas fa-user-cog"></i>Permisos</a>                                
                             </td>
+
                                 @endif
+                            <td>
+                                @if(kvfj(Auth::user()->permissions, 'delete'))
+                                    <a href="{{ url('/admin/user/'.$user->id.'/delete') }}" data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn-deleted" ><i class="fas fa-trash"></i> Eliminar</a>                                
+                                @endif
+                            </td>
+
                             </div>
                         </tr>
                     @endforeach
                         <tr>
-                            <td colspan="7">{!! $users->render() !!}</td>        
+                            <td colspan="8">{!! $users->render() !!}</td>        
                         </tr>
                 </tbody>
             </table><!-- Table -->

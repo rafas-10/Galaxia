@@ -57,7 +57,11 @@ class UserController extends Controller
         $permissions = [
             'dashboard' => $request->input('dashboard'),
             'dashboard_small_stats' => $request->input('dashboard_small_stats'),
-            'galeria' => $request->input('galeria'),
+
+            'galeria_view' => $request->input('galeria_view'),
+            'galeria_new' => $request->input('galeria_new'),
+            'galeria_add' => $request->input('galeria_add'),
+            'galeria_delete' => $request->input('galeria_delete'),
 
             'faq' => $request->input('faq'),
             'faq_list' => $request->input('faq_list'),
@@ -68,6 +72,7 @@ class UserController extends Controller
             'user_list' => $request->input('user_list'),
             'edit' => $request->input('edit'),
             'banned' => $request->input('banned'),
+            'delete' => $request->input('delete'),
             'permissions' => $request->input('permissions')
         ];
         $permissions = json_encode($permissions);
@@ -101,5 +106,12 @@ class UserController extends Controller
                 return back()->with('message', 'El rango se ha actualizado')->with('typealert', 'success');
             endif;
         endif;
+    }
+
+    public function getUserDelete($id){
+        $u = User::find($id);
+        if($u->delete()):
+            return back()->with('message', 'Usuario eliminado')->with('typealert', 'success');
+        endif; 
     }
 }

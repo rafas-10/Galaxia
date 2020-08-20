@@ -14,14 +14,16 @@
                 <label for="edit"> Puede editar los usuarios.</label>
             </div>
 
-            <div class="form-check">
-                <input type="checkbox" value="true" name="banned" @if(kvfj($u->permissions, 'banned')) checked @endif>
-                <label for="banned"> Puede banear usuarios.</label>
-            </div>
+
 
             <div class="form-check">
                 <input type="checkbox" value="true" name="permissions" @if(kvfj($u->permissions, 'permissions')) checked @endif>
                 <label for="permissions"> Puede modificar los permisos.</label>
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" value="true" name="delete" @if(kvfj($u->permissions, 'delete')) checked @endif>
+                <label for="delete"> Puede eliminar los usuarios.</label>
             </div>
             
         </div><!-- Inside -->

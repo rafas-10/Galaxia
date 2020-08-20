@@ -33,7 +33,7 @@
 
         <li class="nav-item">
             <a class="nav-link {{ setActive('faq') }}"
-                href="{{ route ('faq') }}">
+                href="{{ url('faq') }}">
             @lang('Preguntas y respuestas')</a>
         </li>
 
@@ -50,11 +50,12 @@
                     onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">Cerrar Sesión</a>
             </li>
-                    
+       
             <li class="nav-item">
                 <a class="nav-link {{ setActive('dashboard') }}"            
                     href="{{ route('dashboard') }}">Panel Administrador</a>
-            </li>            
+            </li>   
+          
 
         @else
             <li class="nav-item">

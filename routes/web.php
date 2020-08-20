@@ -19,10 +19,12 @@ use Illuminate\Support\Facades\Route;
 */
 Route::view('/', 'home')->name('home');
 Route::view('/nosotros', 'nosotros')->name('nosotros');
-Route::view('/galeria', 'galeria')->name('galeria');
-Route::view('/faq', 'faq')->name('faq');
+Route::get('/galeria', 'GaleriaController@getGaleria')->name('galeria');
+Route::get('/faq', 'FaqController@getHome')->name('faq');
+//Route::get('/faq', 'Admin\FaqController@getHome')->name('faq_list');//Get Listar
 Route::view('/contacto', 'contacto')->name('contacto');
 Route::view('/dashboard', 'dashboard')->name('dashboard');
+
 
 Auth::routes();
 

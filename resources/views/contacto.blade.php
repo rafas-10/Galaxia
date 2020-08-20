@@ -12,6 +12,9 @@
                     @csrf
                     <h1 class="display-4">@lang('Contacto')</h1>
                     <hr>
+                    <p class="font-weight-bold">Siguenos en nuestro Facebook: <a href="https://www.facebook.com"><i class="fab fa-facebook"></i> La galaxia del Videojuego te espera</a></p>
+                    <p class="font-weight-bold">Por cualquier duda marca a nuestro número: <i class="fab fa-whatsapp"></i> 451-101-0967</p>
+                    
                     
 
                 </form>   
